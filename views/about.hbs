@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    /> 
+     <!-- bootstrap offline --> 
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+	<link rel="stylesheet" href="./assets/fontawesome/all.min.css">
+    <title>About</title>
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="position-relative bg-light" style="width: 100%; height: 100vh">
+    <nav
+      class="
+        navbar
+        position-absolute
+        top-0
+        start-0
+        end-0
+        navbar-expand-lg navbar-dark
+        bg-primary
+      "
+    >
+      <div class="container-md">
+        <a class="navbar-brand" href="#">Rizki</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+             <a class="nav-link active mx-3" href="/">Home</a>
+            <a class="nav-link active mx-3" href="/destinasi">Destinasi</a>
+            <a class="nav-link active mx-3" href="/mapbatu">Batu City Position</a>
+            <a class="nav-link active mx-3" href="/about">About Me</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section
+      id="aboutme"
+      style="min-height: 95vh; margin: 0 !important; padding-top: 55px; overflow-y: auto;"
+    >
+      <div class="container">
+        <div class="row text-center d-flex flex-column">
+          <h2>About Me</h2>
+          <img
+            class="mx-auto my-3 rounded-circle"
+            style="
+              width: 250px !important;
+              box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            "
+            src="./img/KTM Rizki.jpg"
+            alt="Profile Rizki"
+          />
+          <h4>Muhammad Rizki Mubarok</h4>
+          <p>Student in State Polytechnic Of Malang</p>
+        </div>
+        <hr />
+        <div class="row d-flex justify-content-between">
+          <h3 class="text-center">Contact Me</h3>
+          <div class="col-md-6">
+            <div
+              class="row d-flex justify-content-between align-items-end mb-3"
+            >
+              <div class="col-md-9">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email Here"
+                />
+              </div>
+              <div class="col-md-3">
+                <button class="btn btn-outline-primary w-100">Submit</button>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4">
+Message Here</textarea
+              >
+            </div>
+          </div>
+          <div class="col-md-6 text-center mb-5">
+            <ul class="list-group mt-3">
+              <li class="list-group-item">Follow Me</li>
+              <li class="list-group-item">
+				  <a class="social-media-icon" href="https://wa.me/62895605981993"><span class="fab fa-whatsapp"></span></a>
+                
+              </li>
+              <li class="list-group-item">
+				  <a class="social-media-icon" href="https://www.instagram.com/rizkimbrkk/"><span class="fab fa-instagram"></span></a>
+              </li>
+              <li class="list-group-item">
+                <a class="fab fa-tiktok" href="https://vt.tiktok.com/ZSe2n5653/" ></a>
+              </li>
+              <li class="list-group-item">            
+				  <a class="social-media-icon" href="https://www.facebook.com/rizki.mubarok.7330"><span class="fab fa-facebook"></span></a>
+                  </a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="
+        bg-primary
+        text-light
+        w-100
+        text-center
+        py-2
+      ">Sistem Pariwisata Kota Batu 2021</footer>   
+     <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script> 
+    <!-- js offline -->
+     <script src="/public/js/bootstrap.js"></script>
+    <script src="/public/js/popper.min.js"></script>
+  </body>
+</html>

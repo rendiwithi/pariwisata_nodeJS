@@ -1,0 +1,269 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ4bDl_2PfZcWSDnlhrqSratd9bUAhKxY&callback=initMap"
+    ></script>
+    <title>Destinasi</title>
+  </head>
+  <body class="position-relative w-100 h-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-md">
+        <a class="navbar-brand" href="#">SHINING BATU</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active mx-3" href="/">Home</a>
+            <a class="nav-link active mx-3" href="/destinasi">Destinasi</a>
+            <a class="nav-link active mx-3" href="/mapbatu">Batu City Position</a>
+            <a class="nav-link active mx-3" href="/about">About Me</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section id="destinasi">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="input-group my-3 w-50">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search Your Destination Here"
+            />
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+              id="button-addon2"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+        <div class="row d-flex align-items-center justify-content-evenly">
+          <div class="card col-md-5 my-3 text-center border-primary border-2">
+            <img
+              src="img/kotabatufirst.jpg"
+              class="card-img-top"
+              style="height: 350px"
+              alt="Air Terjun Coban Rondo"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Air Terjun Coban Rondo</h5>
+              <p class="card-text">
+                Air terjun yang terletak di Kecamatan Pujon, Kota Batu,
+                Kabupaten Malang, Jawa Timur.Air terjun ini mudah dijangkau oleh
+                kendaraan umum. Akses yang paling mudah adalah melalui jalan
+                raya dari Malang ke Batu dari sebelah timur atau dari Kediri ke
+                Pare menuju Malang dari arah barat.
+              </p>
+              <a
+                data-bs-toggle="modal"
+                href="#exampleModalToggle"
+                role="button"
+                class="btn btn-primary"
+                aria-label="Satu"
+              >Check Location</a>
+            </div>
+          </div>
+          <div class="card col-md-5 my-3 text-center border-primary border-2">
+            <img
+              src="img/kotabatu2.jpg"
+              class="card-img-top"
+              style="height: 350px"
+              alt="Air Terjun Coban Rondo"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Alun Alun Kota Batu</h5>
+              <p class="card-text">
+                Sebagai alun-alun daerah Batu, maka tempat ini tak pernah lepas
+                dari keramaian pengunjung.Tempat ini satu-satunya alun-alun
+                dengan fasilitas wahana bianglala permanen di Indonesia. Alun
+                alun Batu berlokasi di bundaran persimpangan antara Jalan
+                Diponegoro dan Jalan Gajah Mada Kota Batu, Jawa Timur.
+              </p>
+              <a
+                data-bs-toggle="modal"
+                href="#exampleModalToggle"
+                role="button"
+                class="btn btn-primary"
+                aria-label="Dua"
+              >Check Location</a>
+            </div>
+          </div>
+          <div class="card col-md-5 my-3 text-center border-primary border-2">
+            <img
+              src="img/kotabatu3.jpg"
+              class="card-img-top"
+              style="height: 350px"
+              alt="Air Terjun Coban Rondo"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Taman Hutan Kota Batu</h5>
+              <p class="card-text">
+                Terletak di jalan Sultan Agung, sebelah barat Stadion Brantas
+                Kota Batu dengan lokasi yang strategis, dekat dengan wisata
+                favorit pelancong yaitu Jawa Timur Park 1. Hutan kota menjadi
+                wisata alternatif bagi pengunjung domestik dan mancanegara untuk
+                menikmati kesejukan.
+              </p>
+              <a
+                data-bs-toggle="modal"
+                href="#exampleModalToggle"
+                role="button"
+                class="btn btn-primary"
+                aria-label="Tiga"
+              >Check Location</a>
+            </div>
+          </div>
+          <div class="card col-md-5 my-3 text-center border-primary border-2">
+            <img
+              src="img/gunungpanderman.jpg"
+              class="card-img-top"
+              style="height: 350px"
+              alt="Air Terjun Coban Rondo"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Gunung Panderman</h5>
+              <p class="card-text">
+                Gunung ini memiliki puncak ketinggian 2045 meter di atas
+                permukaan laut. Memang tidak terlalu tinggi untuk ukuran sebuah
+                gunung. Oleh sebab itu, beberapa orang seringkali menyebutnya
+                sebagai Bukit Panderman. Gunung ini berlokasi di Dusun
+                Toyomerto, Pesanggrahan, Batu.
+              </p>
+              <a
+                data-bs-toggle="modal"
+                href="#exampleModalToggle"
+                role="button"
+                class="btn btn-primary"
+                aria-label="Empat"
+              >Check Location</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalToggle"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel">
+              Location
+              <span id="judullokasi"></span>
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="googleMap" style="width: 100%; height: 600px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function initMap(sumbux, sumbuy, direktorifileimg) {
+        let lokasi = { lat: sumbux, lng: sumbuy };
+
+        let map = new google.maps.Map(document.getElementById("googleMap"), {
+          zoom: 15,
+          center: lokasi,
+        });
+
+        let contentString =
+          "<img style='width:300px !important' src='" + direktorifileimg + "'>";
+
+        let infowindow = new google.maps.InfoWindow({
+          content: contentString,
+          position: lokasi,
+        });
+
+        let marker = new google.maps.Marker({
+          position: lokasi,
+          map: map,
+        });
+
+        infowindow.open(map, marker);
+      }
+
+      const containerjudullokasi = document.getElementById("judullokasi");
+      let tombollokasi = document.querySelectorAll(
+        ".card .card-body a.btn.btn-primary"
+      );
+      let lokasi, sumbux, sumbuy, fileimg;
+      tombollokasi.forEach((e) => {
+        e.addEventListener("click", function () {
+          switch (e.ariaLabel) {
+            case "Satu":
+              lokasi = "Air Terjun Coban Rondo";
+              sumbux = -7.8849715;
+              sumbuy = 112.4772569;
+              fileimg = "img/kotabatufirst.jpg";
+              break;
+            case "Dua":
+              lokasi = "Alun Alun Kota Batu";
+              sumbux = -7.8711289;
+              sumbuy = 112.5245363;
+              fileimg = "img/kotabatu2.jpg";
+              break;
+            case "Tiga":
+              lokasi = "Taman Hutan Kota Batu";
+              sumbux = -7.8787967;
+              sumbuy = 112.522903;
+              fileimg = "img/kotabatu3.jpg";
+              break;
+            case "Empat":
+              lokasi = "Gunung Panderman";
+              sumbux = -7.9041665;
+              sumbuy = 112.4879119;
+              fileimg = "img/gunungpanderman.jpg";
+              break;
+          }
+          containerjudullokasi.innerHTML = lokasi;
+          google.maps.event.addDomListener(
+            window,
+            "load",
+            initMap(sumbux, sumbuy, fileimg)
+          );
+        });
+      });
+    </script>
+    <footer class="bg-primary text-light w-100 text-center py-2">
+      Sistem Pariwisata Kota Batu 2021
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

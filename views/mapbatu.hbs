@@ -1,0 +1,80 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap offline -->
+    <link rel="stylesheet" href="/public/css/bootstrap.css" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ4bDl_2PfZcWSDnlhrqSratd9bUAhKxY&callback=initMap"
+    ></script>
+    <title>Rizki Maps</title>
+  </head>
+  <body class="position-relative w-100 h-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-md">
+        <a class="navbar-brand" href="#">SHINING BATU</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active mx-3" href="/">Home</a>
+            <a class="nav-link active mx-3" href="/destinasi">Destinasi</a>
+            <a class="nav-link active mx-3" href="/mapbatu">Batu City Position</a>
+            <a class="nav-link active mx-3" href="/about">About Me</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section id="maps">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mt-3 text-center">
+            <h1>Batu City Position</h1>
+          </div>
+          <div class="col-md-12 mt-3">
+            <div id="googleMap" style="width: 100%; height: 600px"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      function initMap(sumbux, sumbuy) { let propertiPeta = { center: new
+      google.maps.LatLng(sumbux, sumbuy), zoom: 10, mapTypeId:
+      google.maps.MapTypeId.ROADMAP, }; let peta = new google.maps.Map(
+      document.getElementById("googleMap"), propertiPeta ); // Membuat marker
+      let marker = new google.maps.Marker({ position: new
+      google.maps.LatLng(sumbux, sumbuy), map: peta, animation:
+      google.maps.Animation.BOUNCE, }); } let sumbux = -7.8872833; let sumbuy =
+      112.5322317; google.maps.event.addDomListener(window, "load",
+      initMap(sumbux, sumbuy));
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- js offline -->
+    <script src="/public/js/bootstrap.js"></script>
+    <script src="/public/js/popper.min.js"></script>
+    <footer class="bg-primary text-light w-100 text-center py-2">
+      Sistem Pariwisata Kota Batu 2021
+    </footer>
+  </body>
+</html>

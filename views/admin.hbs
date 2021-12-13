@@ -1,0 +1,320 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title> ADMIN | SHINING</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    /> 
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+  </head>
+  <body class="position-relative bg-light" style="width: 100%; height: 100vh">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-md">
+        <a class="navbar-brand" href="#">SHINING BATU</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active mx-3" href="/">Home</a>
+            <a class="nav-link active mx-3" href="/destinasi">Destinasi</a>
+            <a class="nav-link active mx-3" href="/mapbatu">Batu City Position</a>
+            <a class="nav-link active mx-3" href="/about">About Me</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h1 class="text-center">Tabel Destinasi</h1>
+      <button
+        class="btn btn-primary mb-4"
+        data-toggle="modal"
+        data-target="#myModalAdd"
+      >Tambah Baru</button>
+      <table class="table table-striped" id="mytable">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Deskripsi</th>
+            <th>Image</th>
+            <th>latitude</th>
+            <th>longitude</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each results}}
+            <tr>
+              <td>{{id_des}}</td>
+              <td>{{nama}}</td>
+              <td>{{deskripsi}}</td>
+              <td>{{image}}</td>
+              <td>{{latitude}}</td>
+              <td>{{longitude}}</td>
+              <td>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-sm btn-info edit"
+                  data-id="{{id_des}}"
+                  data-nama="{{nama}}"
+                  data-deskripsi="{{deskripsi}}"
+                  data-image="{{image}}"
+                  data-latitude="{{latitude}}"
+                  data-longitude="{{longitude}}"
+                >Edit</a>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-sm btn-danger delete"
+                  data-id="{{id_des}}"
+                >Delete</a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tambah data mahasiswa-->
+    <form action="/save" method="post">
+      <div
+        class="modal fade"
+        id="myModalAdd"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Tambah Data Destinasi</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="nama"
+                  class="form-control"
+                  placeholder="Masukan nama"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="deskripsi"
+                  class="form-control"
+                  placeholder="masukan deskripsi"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="image"
+                  class="form-control"
+                  placeholder="masukan image"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="latitude"
+                  class="form-control"
+                  placeholder="masukan latitude"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="longitude"
+                  class="form-control"
+                  placeholder="masukan longitude"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >Close</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Edit tabel-->
+    <form action="/update" method="post">
+      <div
+        class="modal fade"
+        id="EditModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Data Destinasi</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="nama"
+                  class="form-control nama"
+                  placeholder="masukan nama"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="deskripsi"
+                  class="form-control deskripsi"
+                  placeholder="masukan deskripsi"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="image"
+                  class="form-control image"
+                  placeholder="masukan image"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="latitude"
+                  class="form-control latitude"
+                  placeholder="masukan latitude"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="longitude"
+                  class="form-control longitude"
+                  placeholder="masukan longitude"
+                  required
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input type="hidden" name="id" class="id_des" />
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >Batal</button>
+              <button type="submit" class="btn btn-primary">Perbarui</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- hapus tabel-->
+    <form id="add-row-form" action="/delete" method="post">
+      <div
+        class="modal fade"
+        id="DeleteModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="myModalLabel">Hapus Data</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              ><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <strong>apa anda yakin hapus data ini?</strong>
+            </div>
+            <div class="modal-footer">
+              <input
+                type="hidden"
+                name="id_des"
+                class="form-control product_id2"
+                required
+              />
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+              >Batal</button>
+              <button type="submit" class="btn btn-success">Hapus</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script src="/assets/js/jquery-3.3.1.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    
+    <script>
+      $(document).ready(function(){ //menampilkan data untuk di edit
+      $('#mytable').on('click','.edit',function(){ var id_des =
+      $(this).data('id'); var nama = $(this).data('nama'); var deskripsi =
+      $(this).data('deskripsi');var image = $(this).data('image');
+      var latitude = $(this).data('latitude');var longitude = $(this).data('longitude');
+      $('#EditModal').modal('show'); $('.nama').val(nama); $('.deskripsi').val(deskripsi)
+      $('.image').val(image);$('.latitude').val(latitude);$('.longitude').val(longitude);
+       $('.id_des').val(id_des); });
+      //manampilkan data untuk dihapus
+      $('#mytable').on('click','.delete',function(){ var id_des =
+      $(this).data('id'); $('#DeleteModal').modal('show');
+      $('.product_id2').val(id_des); }); });
+    </script>
+  </body>
+</html>
