@@ -49,9 +49,9 @@
             <th>No</th>
             <th>Nama</th>
             <th>Deskripsi</th>
-            <th>Image</th>
             <th>latitude</th>
             <th>longitude</th>
+            <th>Image</th>
             <th>Aksi</th>
           </tr>
         </thead>
@@ -61,9 +61,9 @@
               <td>{{id_des}}</td>
               <td>{{nama}}</td>
               <td>{{deskripsi}}</td>
-              <td>{{image}}</td>
               <td>{{latitude}}</td>
               <td>{{longitude}}</td>
+              <td>{{image}}</td>
               <td>
                 <a
                   href="javascript:void(0);"
@@ -71,9 +71,9 @@
                   data-id="{{id_des}}"
                   data-nama="{{nama}}"
                   data-deskripsi="{{deskripsi}}"
-                  data-image="{{image}}"
                   data-latitude="{{latitude}}"
                   data-longitude="{{longitude}}"
+                  data-image="{{image}}"
                 >Edit</a>
                 <a
                   href="javascript:void(0);"
@@ -87,8 +87,8 @@
       </table>
     </div>
 
-    <!-- Tambah data mahasiswa-->
-    <form action="/save" method="post">
+    <!-- Tambah data destinasi-->
+    <form action="/save" method="post" enctype="multipart/form-data">
       <div
         class="modal fade"
         id="myModalAdd"
@@ -133,15 +133,6 @@
               <div class="form-group">
                 <input
                   type="text"
-                  name="image"
-                  class="form-control"
-                  placeholder="masukan image"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
                   name="latitude"
                   class="form-control"
                   placeholder="masukan latitude"
@@ -154,6 +145,15 @@
                   name="longitude"
                   class="form-control"
                   placeholder="masukan longitude"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="file"
+                  name="image"
+                  class="form-control"
+                  placeholder="pilih image"
                   required
                 />
               </div>
@@ -172,7 +172,7 @@
     </form>
 
     <!-- Edit tabel-->
-    <form action="/update" method="post">
+    <form action="/update" method="post" enctype="multipart/form-data">
       <div
         class="modal fade"
         id="EditModal"
@@ -217,15 +217,6 @@
               <div class="form-group">
                 <input
                   type="text"
-                  name="image"
-                  class="form-control image"
-                  placeholder="masukan image"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
                   name="latitude"
                   class="form-control latitude"
                   placeholder="masukan latitude"
@@ -239,6 +230,14 @@
                   class="form-control longitude"
                   placeholder="masukan longitude"
                   required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="file"
+                  name="image"
+                  class="form-control image"
+                  placeholder="masukan image"
                 />
               </div>
             </div>
@@ -284,7 +283,7 @@
               <input
                 type="hidden"
                 name="id_des"
-                class="form-control product_id2"
+                class="form-control id_des"
                 required
               />
               <button
@@ -306,15 +305,15 @@
       $(document).ready(function(){ //menampilkan data untuk di edit
       $('#mytable').on('click','.edit',function(){ var id_des =
       $(this).data('id'); var nama = $(this).data('nama'); var deskripsi =
-      $(this).data('deskripsi');var image = $(this).data('image');
-      var latitude = $(this).data('latitude');var longitude = $(this).data('longitude');
+      $(this).data('deskripsi');var latitude = $(this).data('latitude');
+      var longitude = $(this).data('longitude');var image = $(this).data('image');
       $('#EditModal').modal('show'); $('.nama').val(nama); $('.deskripsi').val(deskripsi)
-      $('.image').val(image);$('.latitude').val(latitude);$('.longitude').val(longitude);
+      $('.latitude').val(latitude);$('.longitude').val(longitude);$('.image').val(image);
        $('.id_des').val(id_des); });
       //manampilkan data untuk dihapus
       $('#mytable').on('click','.delete',function(){ var id_des =
       $(this).data('id'); $('#DeleteModal').modal('show');
-      $('.product_id2').val(id_des); }); });
+      $('.id_des').val(id_des); }); });
     </script>
   </body>
 </html>
