@@ -59,13 +59,14 @@
           </div>
         </div>
         <div class="row d-flex align-items-center justify-content-evenly">
-          <div class="card col-md-5 my-3 text-center border-primary border-2">
+          {{!-- <div class="card col-md-5 my-3 text-center border-primary border-2">
             <img
               src="img/kotabatufirst.jpg"
               class="card-img-top"
               style="height: 350px"
               alt="Air Terjun Coban Rondo"
             />
+            
             <div class="card-body">
               <h5 class="card-title">Air Terjun Coban Rondo</h5>
               <p class="card-text">
@@ -83,81 +84,35 @@
                 aria-label="Satu"
               >Check Location</a>
             </div>
-          </div>
-          <div class="card col-md-5 my-3 text-center border-primary border-2">
+          </div> --}}
+          {{!-- awal --}}
+
+          {{#each results}}
+        <div class="card col-md-5 my-3 text-center border-primary border-2">
             <img
-              src="img/kotabatu2.jpg"
+              src="{{image}}"
               class="card-img-top"
               style="height: 350px"
-              alt="Air Terjun Coban Rondo"
+              alt="{{image}}" 
             />
+            
             <div class="card-body">
-              <h5 class="card-title">Alun Alun Kota Batu</h5>
+              <h5 class="card-title">{{nama}}</h5>
               <p class="card-text">
-                Sebagai alun-alun daerah Batu, maka tempat ini tak pernah lepas
-                dari keramaian pengunjung.Tempat ini satu-satunya alun-alun
-                dengan fasilitas wahana bianglala permanen di Indonesia. Alun
-                alun Batu berlokasi di bundaran persimpangan antara Jalan
-                Diponegoro dan Jalan Gajah Mada Kota Batu, Jawa Timur.
+                {{deskripsi}}
               </p>
               <a
                 data-bs-toggle="modal"
                 href="#exampleModalToggle"
                 role="button"
                 class="btn btn-primary"
-                aria-label="Dua"
+                aria-label="Satu"
               >Check Location</a>
             </div>
           </div>
-          <div class="card col-md-5 my-3 text-center border-primary border-2">
-            <img
-              src="img/kotabatu3.jpg"
-              class="card-img-top"
-              style="height: 350px"
-              alt="Air Terjun Coban Rondo"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Taman Hutan Kota Batu</h5>
-              <p class="card-text">
-                Terletak di jalan Sultan Agung, sebelah barat Stadion Brantas
-                Kota Batu dengan lokasi yang strategis, dekat dengan wisata
-                favorit pelancong yaitu Jawa Timur Park 1. Hutan kota menjadi
-                wisata alternatif bagi pengunjung domestik dan mancanegara untuk
-                menikmati kesejukan.
-              </p>
-              <a
-                data-bs-toggle="modal"
-                href="#exampleModalToggle"
-                role="button"
-                class="btn btn-primary"
-                aria-label="Tiga"
-              >Check Location</a>
-            </div>
-          </div>
-          <div class="card col-md-5 my-3 text-center border-primary border-2">
-            <img
-              src="img/gunungpanderman.jpg"
-              class="card-img-top"
-              style="height: 350px"
-              alt="Air Terjun Coban Rondo"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Gunung Panderman</h5>
-              <p class="card-text">
-                Gunung ini memiliki puncak ketinggian 2045 meter di atas
-                permukaan laut. Memang tidak terlalu tinggi untuk ukuran sebuah
-                gunung. Oleh sebab itu, beberapa orang seringkali menyebutnya
-                sebagai Bukit Panderman. Gunung ini berlokasi di Dusun
-                Toyomerto, Pesanggrahan, Batu.
-              </p>
-              <a
-                data-bs-toggle="modal"
-                href="#exampleModalToggle"
-                role="button"
-                class="btn btn-primary"
-                aria-label="Empat"
-              >Check Location</a>
-            </div>
+          {{/each}}
+          {{!-- akhir --}}
+          
           </div>
         </div>
       </div>

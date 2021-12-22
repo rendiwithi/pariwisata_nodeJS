@@ -43,6 +43,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // menampilkan gambar
 app.use(express.static("public"));
 app.use("/assets", express.static(__dirname + "/public"));
+app.use(express.static("uploads"));
 
 // untuk index
 app.get("/", (req, res) => {
@@ -52,7 +53,13 @@ app.get("/about", (req, res) => {
   res.render("about");
 });
 app.get("/destinasi", (req, res) => {
-  res.render("destinasi");
+  let sql = "SELECT * FROM destinasi";
+  let query = conn.query(sql, (err, results) => {
+    if (err) throw err;
+    res.render("destinasi", {
+      results: results,
+    });
+  });
 });
 app.get("/mapbatu", (req, res) => {
   res.render("mapbatu");
@@ -100,7 +107,7 @@ app.post("/update",upload.single('image'), (req, res) => {
     "',image = '" +
     req.file.filename +
   "' WHERE id_des = " + 
-    req.body.id_des;
+    req.body.id;
   let query = conn.query(sql, (err, results) => {
     if (err) throw err;
     res.redirect("/admin");
@@ -114,6 +121,7 @@ app.post("/delete", (req, res) => {
     res.redirect("/admin");
   });
 });
+
 
 //server jagan dihapus
 app.listen(port, () => {
