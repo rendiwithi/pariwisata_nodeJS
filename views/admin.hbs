@@ -303,17 +303,28 @@
     
     <script>
       $(document).ready(function(){ //menampilkan data untuk di edit
-      $('#mytable').on('click','.edit',function(){ var id_des =
-      $(this).data('id'); var nama = $(this).data('nama'); var deskripsi =
-      $(this).data('deskripsi');var latitude = $(this).data('latitude');
-      var longitude = $(this).data('longitude');var image = $(this).data('image');
-      $('#EditModal').modal('show'); $('.nama').val(nama); $('.deskripsi').val(deskripsi)
-      $('.latitude').val(latitude);$('.longitude').val(longitude);$('.image').val(image);
-       $('.id_des').val(id_des); });
+      $('#mytable').on('click','.edit',function(){ 
+      var id_des = $(this).data('id');
+      var nama = $(this).data('nama'); 
+      var deskripsi =$(this).data('deskripsi');
+      var latitude = $(this).data('latitude');
+      var longitude = $(this).data('longitude');
+      var image = $(this).data('image');
+      $('#EditModal').modal('show'); 
+      $('.id_des').val(id_des); 
+      $('.nama').val(nama);
+      $('.deskripsi').val(deskripsi);
+      $('.latitude').val(latitude);
+      $('.longitude').val(longitude);
+      $('.image').val(image);      
+      });
+
       //manampilkan data untuk dihapus
-      $('#mytable').on('click','.delete',function(){ var id_des =
-      $(this).data('id'); $('#DeleteModal').modal('show');
-      $('.id_des').val(id_des); }); });
+      $('#mytable').on('click','.delete',function(){ 
+        var id_des = $(this).data('id'); 
+        $('#DeleteModal').modal('show');
+        $('.id_des').val(id_des); }); 
+        });
     </script>
   </body>
 </html>

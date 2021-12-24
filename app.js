@@ -112,6 +112,7 @@ app.post("/update",upload.single('image'), (req, res) => {
     if (err) throw err;
     res.redirect("/admin");
   });
+
 });
 //untuk hapus data destinasi
 app.post("/delete", (req, res) => {
