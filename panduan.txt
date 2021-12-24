@@ -1,0 +1,11 @@
+Persiapan Bahan
+	- pastikan terinstal node js
+	- xampp sudah menyala(apache+mysql)
+	- buat database baru dengan nama : destinasi_batu
+	- import tabel di destinasi_batu.sql
+	- pastikan sudah menjalankan perintah : npm install (agar mengenerate node modulnya)
+
+Running server
+	- untuk merun project ketikkan : npm start
+	- coba cek di localhost:8000
+	- halaman admin ada di localhost:8000/admin
